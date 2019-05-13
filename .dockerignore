@@ -1,5 +1,3 @@
 __pycache__/
 .devcontainer/
 .vscode/
-.env
-.env.template

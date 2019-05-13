@@ -14,7 +14,6 @@
                 "FLASK_ENV": "development",
                 "FLASK_DEBUG": "0"
             },
-            "envFile": "${workspaceFolder}/.env",
             "args": ["run", "--no-debugger", "--no-reload"],
             "jinja": true
         }
