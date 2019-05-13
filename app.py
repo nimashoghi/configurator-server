@@ -1,6 +1,13 @@
 from flask import Flask, abort, jsonify, render_template, request
-
 from flask_cors import CORS
+
+
+def get_schema():
+    from os import environ
+    from json import load, dumps
+
+    with open(environ.get("SCHEMA_FILE", "settings.schema.json")) as f:
+        return dumps(load(f), ensure_ascii=True)
 
 
 def confirm_update_passcode(passcode: str):
@@ -62,4 +69,4 @@ def set_settings(passcode):
 
 @app.route("/", methods=["GET"])
 def index():
-    return render_template("index.html", host=request.host)
+    return render_template("index.html", host=request.host, schema=get_schema())
