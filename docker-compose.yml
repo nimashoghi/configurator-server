@@ -1,7 +1,7 @@
 version: "3.1"
 services:
     configurator:
-        image: "nimashoghi/configurator-server"
+        image: "nimashoghi/configurator-server:latest"
         environment:
             - SCHEMA_FILE=/app/settings.schema.json
             - SETTINGS_FILE=/app/settings.json
